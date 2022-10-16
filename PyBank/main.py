@@ -14,6 +14,7 @@ profitLossDelta = 0
 with open(csvPath, 'r') as csvfile:
     reader = csv.reader(csvfile)
     headerreader = next(reader)
+    #loop through CSV and get total months. store columns in lists. Calculate net profit/loss
     for row in reader:
         totalMonths += 1
         date = row[0]
