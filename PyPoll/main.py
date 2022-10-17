@@ -8,7 +8,6 @@ electionData = open(csvPath)
 csvReader = csv.reader(electionData, delimiter = ",")
 totalVotes = 0
 candidate = []
-candidateList = []
 candidateVoteList = {}
 outputFile = "pollanalysis.txt"
 chuckVotes = 0
@@ -25,9 +24,6 @@ with open(csvPath, 'r') as csvfile:
         ballotId = row[0]
         county = row[1]
         candidate = row[2]
-        # find and store unique list of candidates
-        if candidate not in candidateList:
-            candidateList.append(candidate)
         # tabulate vote counts and store
         chuckVotes = chuckVotes + candidate.count('Charles Casper Stockham')
         dianaVotes = dianaVotes + candidate.count('Diana DeGette')
